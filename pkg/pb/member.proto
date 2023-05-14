@@ -1,0 +1,8 @@
+syntax = "proto2";
+option go_package = "github.com/science-dao/gateway/pkg/pb";
+
+message MemberMsg {
+    required string cid = 1;
+    required bytes signature = 2;
+    required string file = 3;
+}

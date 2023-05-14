@@ -1,0 +1,284 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "id",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint64",
+				"name": "size",
+				"type": "uint64"
+			},
+			{
+				"indexed": true,
+				"internalType": "bool",
+				"name": "verified",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "DealProposalCreate",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint8",
+				"name": "version",
+				"type": "uint8"
+			}
+		],
+		"name": "Initialized",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "received",
+				"type": "string"
+			}
+		],
+		"name": "ReceivedDataCap",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "addBalance",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint64",
+				"name": "method",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			},
+			{
+				"internalType": "bytes",
+				"name": "params",
+				"type": "bytes"
+			}
+		],
+		"name": "handle_filecoin_method",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			},
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract Storage",
+				"name": "_s",
+				"type": "address"
+			}
+		],
+		"name": "initialize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes",
+						"name": "piece_cid",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "piece_size",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bool",
+						"name": "verified_deal",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "label",
+						"type": "string"
+					},
+					{
+						"internalType": "int64",
+						"name": "start_epoch",
+						"type": "int64"
+					},
+					{
+						"internalType": "int64",
+						"name": "end_epoch",
+						"type": "int64"
+					},
+					{
+						"internalType": "uint256",
+						"name": "storage_price_per_epoch",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "provider_collateral",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "client_collateral",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "dataCid",
+						"type": "string"
+					},
+					{
+						"internalType": "uint64",
+						"name": "extra_params_version",
+						"type": "uint64"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "location_ref",
+								"type": "string"
+							},
+							{
+								"internalType": "uint64",
+								"name": "car_size",
+								"type": "uint64"
+							},
+							{
+								"internalType": "bool",
+								"name": "skip_ipni_announce",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "remove_unsealed_copy",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Structs.ExtraParamsV1",
+						"name": "extra_params",
+						"type": "tuple"
+					}
+				],
+				"internalType": "struct Structs.DealRequest",
+				"name": "deal",
+				"type": "tuple"
+			}
+		],
+		"name": "makeDealProposal",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "s",
+		"outputs": [
+			{
+				"internalType": "contract Storage",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_dao",
+				"type": "address"
+			}
+		],
+		"name": "setDao",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "pieceCid",
+				"type": "bytes"
+			}
+		],
+		"name": "updateActivationStatus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "client",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

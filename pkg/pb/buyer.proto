@@ -1,0 +1,7 @@
+syntax = "proto2";
+option go_package = "github.com/science-dao/gateway/pkg/pb";
+
+message BuyerMsg {
+    required int64 tokenId = 1;
+    required bytes signature = 2;
+}
